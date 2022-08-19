@@ -1,0 +1,141 @@
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~
+$ mkdir learn_git_again
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~
+$ cd learn_git_again
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again
+$ touch third.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again
+$ init
+bash: init: command not found
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again
+$ git init
+Initialized empty Git repository in C:/Users/keela/learn_git_again/.git/
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git add third.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git commit -m "adding third.txt"
+[master (root-commit) fe6d9db] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git log
+commit fe6d9dbdc98eb0b7da434e2123b3d6ff08f5c939 (HEAD -> master)
+Author: keelanderrick <51009301+keelanderrick@users.noreply.github.com>
+Date:   Fri Aug 19 12:01:11 2022 -0500
+
+    adding third.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ touch fourth.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git add fourth.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git commit -m "adding fourth.txt"
+[master 642a4fa] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git rm third.txt
+rm 'third.txt'
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git add .
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git commit -m "removing third.txt"
+[master 6945b5e] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git log
+commit 6945b5e8000f384a9a2d988ba23a3e743fa7c42a (HEAD -> master)
+Author: keelanderrick <51009301+keelanderrick@users.noreply.github.com>
+Date:   Fri Aug 19 12:03:12 2022 -0500
+
+    removing third.txt
+
+commit 642a4fac4a415921a51331457f6be3c728eba151
+Author: keelanderrick <51009301+keelanderrick@users.noreply.github.com>
+Date:   Fri Aug 19 12:01:37 2022 -0500
+
+    adding fourth.txt
+
+commit fe6d9dbdc98eb0b7da434e2123b3d6ff08f5c939
+Author: keelanderrick <51009301+keelanderrick@users.noreply.github.com>
+Date:   Fri Aug 19 12:01:11 2022 -0500
+
+    adding third.txt
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git config --global core.pager=cat
+error: invalid key: core.pager=cat
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git config --global core.pager 'cat'
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+keela@DESKTOP-CKOTPN0 MINGW64 ~/learn_git_again (master)
+$ git config --global --list
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=keelanderrick
+user.email=51009301+keelanderrick@users.noreply.github.com
+core.pager=cat
